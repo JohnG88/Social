@@ -3,7 +3,15 @@
 {% block title %}
     test profile
 {% endblock title %}
-
+<!--.get_my_posts, .numb_posts, etc are from Profile model methods-->
 {% block content %}
-    {{ profile }}
+    <p><b>My Posts</b>: {{ profile.get_my_posts }}</p>
+    <p><b>My Posts Number</b>: {{ profile.numb_posts }}</p>
+    <p><b>Following Profiles</b>: {{ profile.get_following }}</p>
+    <p><b>Following Profiles List</b>: {{ profile.get_following_users }}</p>
+    <p><b>My Posts + Posts of Following Users</b>: {{ profile.get_my_and_following_posts }}</p>
+    <p><b>Proposal for Following</b>: {{ profile.get_proposals_for_following }}</p>
+    <p><b>Number of People Following</b>: {{ profile.following_count }}</p>
+    <p><b>My Followers</b>: {{ profile.get_followers }}</p>
+    <p><b>Number of my Followers</b>: {{ profile.followers_count }}</p>
 {% endblock content %}
