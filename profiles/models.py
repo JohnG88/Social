@@ -37,7 +37,7 @@ class Profile(models.Model):
 
     # to make into a list
     def get_following_users(self):
-        # Below is list comprehension
+        # Below is list comprehension. A list comprehension works by naming the for loop and also using the same name in the for loop. The idea is suppose to be [expression for val in collection] can also add an if clause or multiple if clauses [expr for val in collection if <test1> and <test2>] can loop over more than one collection [expr for val1 in collection1 and val2 in collection2]
         following_list = [p for p in self.get_following()]
         return following_list
 
